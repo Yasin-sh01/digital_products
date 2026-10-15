@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>حساب کاربری</title>
+</head>
+<body>
+
+    <h1>حساب کاربری من</h1>
+
+    <p>سلام {{ request.user.username }}</p>
+
+    <p>ایمیل: {{ request.user.email }}</p>
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">خروج از حساب</button>
+    </form>
+
+</body>
+</html>
